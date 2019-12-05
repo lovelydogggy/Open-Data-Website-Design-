@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="./css/style.css" />
+	<link rel="stylesheet" type="text/css" href="./css/page4.css" />
+</head>
+<body>
+	<div class="header">
+		<div class="w1180">
+			<div class="logo left">
+				<a href="#">
+					<div class="logoTop">
+						<img src="img/logo.png" />
+						<h1>上海数据</h1>
+					</div>
+					<p>我们致力于数据资源开放，提供数据下载和应用服务</p>
+				</a>
+			</div>
+			<div class="naver right">
+				<ul>
+					<li>
+						<a href="#">首页</a>
+					</li>
+					<li>|</li>
+					<li>
+						<a href="#">数据</a>
+					</li>
+					<li>|</li>
+					<li>
+						<a href="#">接口</a>
+					</li>
+					<li>|</li>
+					<li>
+						<a href="#">移动应用</a>
+					</li>
+					<li>|</li>
+					<li>
+						<a href="#">互动交流</a>
+					</li>
+					<li>|</li>
+					<li>
+						<a href="#">我的主页</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="division"></div>
+	<div class="content">
+		<div class="contentLeft">
+			<h2 class="conTitle"><p>数据格式</p></h2>
+			<ul>
+				<a href="#"><li>CSV格式</li></a>
+				<a href="#"><li>RDF格式</li></a>
+				<a href="#"><li>PDF格式</li></a>
+				<a href="#"><li>HTML格式</li></a>
+			</ul>
+		</div>
+		<div class="contentRight">
+			<div class="contentTop">
+				<div class="file">
+					<img src="./img/csv.png">
+					<div class="fileLeft">
+						<a href="#"><h3>chenxing2016.csv</h3></a>
+						<p>链接可以使用</p>
+					</div>
+					<div class="fileRight">
+						<a href="#">文件下载</a>
+						<p> | 556次下载 | </p>
+					</div>
+				</div>
+				<ul>
+					<li>URL:<a href="#">https://data.cityofnewyork.us/api/views/kku6-nxdu/rows.csv?accessType=DOWNLOAD</a></li>
+					<li>来源：2016年度晨光计划项目名单（艺术学专项）</li>
+				</ul>
+			</div>
+			<h2>数据预览</h2>
+			<div class="contentBottom">
+				<div class="pictures banner"><img src="./img/data35.jpg"></div>
+				<div class="picture banner"><img src="./img/data36.jpg"></div>
+				<div class="picture banner"><img src="./img/data37.jpg"></div>
+				<form>
+					<p>X轴：</p>
+					<input class="box" type="text" name=""><br>
+					<p>Y轴：</p>
+					<input class="box" type="text" name=""><br>
+					<p>数值：</p>
+					<input class="box" type="text" name=""><br>
+					<input type="hidden" id="imgIndex" value="0" />
+					<div class="Button replace"  >更换模版</div>
+					<input class="Button Submission" type="submit" name="" value="保存分析"><br>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>
+<script src="./js/jquery-1.11.0.js"></script>
+<script>
+	$(".replace").click(function(){
+
+		var i = $("#imgIndex").val();
+		
+		var newsi = parseInt(i)+1;
+		var length = $(".banner").children().length;
+		if(i>=length-1){
+			newsi = 0;
+		}
+		$(".banner").removeClass("pictures");
+		$(".banner").eq(i).addClass("picture");
+		$(".banner").eq(newsi).removeClass("picture");
+		$(".banner").eq(newsi).addClass("pictures");
+		$("#imgIndex").val(newsi);
+	});
+</script>
